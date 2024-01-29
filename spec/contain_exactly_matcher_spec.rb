@@ -13,7 +13,8 @@ RSpec.describe 'contain_exactly matcher' do
   it { is_expected.to contain_exactly(3, 2, 1) }
   it { is_expected.to contain_exactly(2, 1, 3) }
 
-  describe (['a', 'b', 'c']) do
+  describe '["a", "b", "c"]' do
+    subject { ["a", "b", "c"] }
     it { is_expected.to contain_exactly('a', 'b', 'c') }
   end
 end
