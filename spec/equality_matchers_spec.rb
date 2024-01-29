@@ -13,7 +13,7 @@ RSpec.describe 'equality matchers' do
   describe 'eql matcher' do
     it 'tests for value and type' do
       expect(a).not_to eql(3)
-      expect(a).not_to eql(3.0)
+      expect(b).not_to eql(3.0)
       expect(a).not_to eql(b)
     end
   end

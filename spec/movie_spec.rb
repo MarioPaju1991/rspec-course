@@ -43,10 +43,18 @@ RSpec.describe Movie do
 
   describe "#start_shooting method" do
     it "expects an actor to do 3 actions" do
-      expect(stuntman).to receive(:ready?)
-      expect(stuntman).to receive(:act)
-      expect(stuntman).to receive(:fall_off_ladder)
-      expect(stuntman).to receive(:light_on_fire)
+      # expect(stuntman).to receive(:ready?)
+      # expect(stuntman).to receive(:act)
+      # expect(stuntman).to receive(:fall_off_ladder)
+      # expect(stuntman).to receive(:light_on_fire)
+
+      # We can use the receive counts method to check how many times a method is called
+      expect(stuntman).to receive(:ready?).exactly(1).times
+      expect(stuntman).to receive(:act).once
+      #We can use this so it is flexible to the number of times it is called even less than actual number will pass
+      #Twice is the maximum number of times it can be called otherwise use at most
+      #expect(stuntman).to receive(:act).twice
+      expect(stuntman).to receive(:fall_off_ladder).at_most(1).times
       subject.start_shooting
     end
   end
