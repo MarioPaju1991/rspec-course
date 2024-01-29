@@ -1,4 +1,4 @@
-RSpec.describe ProgrammingLanguage do
+RSpec.describe 'ProgrammingLanguage' do
   let(:language) { ProgrammingLanguage.new('Python') }
 
   it 'should store the name of the language' do
